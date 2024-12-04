@@ -33,15 +33,25 @@ header {
     padding: 1rem 2rem;
     position: fixed;
     width: 100%;
+<<<<<<< HEAD
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+=======
+    height: 100vh;
+    background-color: black;
+>>>>>>> 68f7a23ff2fcf95852b6a4987d82065937696243
 }
 
 .nav-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+<<<<<<< HEAD
+=======
+    padding: 2rem;
+    font-family: "Montserrat", sans-serif; 
+>>>>>>> 68f7a23ff2fcf95852b6a4987d82065937696243
 }
 
 .nav-links {
