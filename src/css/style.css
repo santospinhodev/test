@@ -1,38 +1,167 @@
+/* Reseta estilos padrões */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-decoration: none;
 }
 
-.container {
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Variáveis para modo claro e escuro */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --primary-color: #007bff;
+}
+
+body.dark {
+    --bg-color: #121212;
+    --text-color: #f1f1f1;
+    --primary-color: #00d1ff;
+}
+
+/* Cabeçalho e menu de navegação */
+header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem 2rem;
+    position: fixed;
     width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.hero {
+.nav-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem;
-    font-family: "Montserrat", sans-serif;
-    background-color: black;   
 }
 
-.logo-portfolio {
-    color: white;
-    font-size: 2rem;
-}
-
-.logo-portfolio span {
-    color: brown;
-}
-
-li {
-    display: inline;
+.nav-links {
     list-style: none;
-    margin-left: 1rem;
+    display: flex;
+    gap: 1rem;
 }
 
-li a {
-    color: white;
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+/* Menu mobile */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        display: none;
+        background-color: var(--primary-color);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        padding: 1rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Sessões */
+.section {
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+/* Projetos */
+.projects {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+}
+
+/* Botão de voltar ao topo */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top.show {
+    display: block;
+}
+
+/* Botão de tema */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
 }
